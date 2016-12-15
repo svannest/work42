@@ -6,7 +6,7 @@
 /*   By: svannest <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 10:39:34 by svannest          #+#    #+#             */
-/*   Updated: 2016/12/13 12:02:59 by svannest         ###   ########.fr       */
+/*   Updated: 2016/12/15 14:15:49 by joinacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,25 +61,116 @@ char		*ft_snr(char *str, char a)
 	return (str);
 }
 
+void			ft_puttab(char **tab)
+{
+	int i;
+
+	i = 0;
+	while (tab[i])
+	{
+		ft_putchar('\n');
+		ft_putstr(tab[i]);
+		i++;
+	}
+}
+
+void			test_coord(char **tab)
+{
+	int i=0;
+	int j=0;
+
+	
+	while (tab[i])
+	{
+		while(tab[i][j])
+		{
+			if (tab[i][j] != '.')
+			{
+				ft_putchar('[');
+				ft_putnbr(i);
+				ft_putchar(',');
+				ft_putnbr(j);
+				ft_putchar(']');
+				j++;
+			}
+			else
+				j++;
+		}
+	j = 0;
+	i++;
+	}
+}
+
+int				mingrid(int pcs)
+{
+	int		i;
+	
+	i = 0;
+	if (pcs == 1)
+		return (2);
+	if (pcs == 2)
+		return (3);
+	while (i * i / 4 <= pcs)
+		i++;
+	return (i);
+}
+
+char 			**grid(int i)
+{
+	char	**g;
+	int		a;
+	int		b;
+
+	a = 0;
+	b = 0;
+	g = malloc(sizeof(char*) * i + 1);
+	while (a != i)
+	{
+		g[a] = malloc(sizeof(char) * i + 1);
+		while(b != i)
+		{
+		g[a][b] = '.';
+		b++;
+		}
+	g[a][b] = '\0';
+	b = 0;
+	a++;
+	}
+	g[a] = NULL;
+	return (g);
+}
+
 void            say_check(char *newstr)
 {
 	int		i;
 	int		j;
 	char	**tab;
+	char	***tri = NULL;
 
 	i = 0;
 	j = 0;
 	tab = ft_strsplit(newstr, 'p');
+	while (tab[j])
+		j++;
+	tri = malloc(sizeof(char **) * (j + 1));
 	while (tab[i])
 	{
-		ft_putstr(ft_snr(sort_tetri(tab[i]), j + 'A'));
-//		ft_putchar('\t');
-//		ft_putstr(tab[i]);
-		ft_putchar('\n');
-		ft_putchar('\n');
+		tab[i] = ft_strdup(ft_snr((sort_tetri(tab[i])), i + 'A'));
+		tri[i] = ft_strsplit(tab[i], '\n');
 		i++;
-		j++;
 	}
+	tri[i] = NULL;
+	j = 0;
+	while (tri[j])
+	{
+	ft_puttab(tri[j]);
+	ft_putchar('\t');
+	test_coord(tri[j]);
+	ft_putchar('\n');
+	j++;
+	}
+	ft_puttab(grid(mingrid(j)));
+
 }
 
 char	*sort_tetri(char *str)

@@ -6,10 +6,11 @@
 /*   By: svannest <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 11:17:48 by svannest          #+#    #+#             */
-/*   Updated: 2016/12/13 13:44:16 by svannest         ###   ########.fr       */
+/*   Updated: 2016/12/15 10:49:09 by joinacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 #include "tetriminos.h"
 
