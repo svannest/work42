@@ -6,7 +6,7 @@
 #    By: joinacio <joinacio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 15:04:23 by joinacio          #+#    #+#              #
-#    Updated: 2016/12/09 10:48:09 by svannest         ###   ########.fr        #
+#    Updated: 2016/12/16 10:20:48 by joinacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS = error.c \
 	   lecture.c \
 	   main.c \
 	   check.c \
+	   struct.c \
 
 OBJS = $(SRCS:.c=.o)
 

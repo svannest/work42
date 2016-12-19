@@ -6,7 +6,7 @@
 /*   By: svannest <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 10:54:43 by svannest          #+#    #+#             */
-/*   Updated: 2016/12/15 12:04:27 by joinacio         ###   ########.fr       */
+/*   Updated: 2016/12/16 15:55:11 by joinacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		s_ma(char *malloc)
 {
 	if (malloc == NULL)
 	{
-		ft_putstr("malloc() failed");
+		ft_putstr("malloc() failed\n");
 		exit(0);
 	}
 }
@@ -32,7 +32,7 @@ void		s_op(int open)
 {
 	if (open == -1)
 	{
-		ft_putstr("open() failed");
+		ft_putstr("open() failed\n");
 		exit(0);
 	}
 }
@@ -41,7 +41,7 @@ void		s_rd(int read)
 {
 	if (read == -1)
 	{
-		ft_putstr("read() failed");
+		ft_putstr("read() failed\n");
 		exit(0);
 	}
 }

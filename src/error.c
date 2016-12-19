@@ -6,7 +6,7 @@
 /*   By: svannest <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 11:17:48 by svannest          #+#    #+#             */
-/*   Updated: 2016/12/15 10:49:09 by joinacio         ###   ########.fr       */
+/*   Updated: 2016/12/16 15:54:40 by joinacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		verif_taille_char(char *str)
 	}
 	if (verif_norm(str) == 1)
 	{
-		ft_putstr("Norm KO");
+		ft_putstr("Norm KO\n");
 		exit(1);
 	}
 	insert_p(str);
